@@ -71,12 +71,7 @@ public abstract class PermissionHelper<T> {
                                    @StyleRes int theme,
                                    int requestCode,
                                    @NonNull String... perms) {
-        if (shouldShowRationale(perms)) {
-            showRequestPermissionRationale(
-                    rationale, positiveButton, negativeButton, theme, requestCode, perms);
-        } else {
-            directRequestPermissions(requestCode, perms);
-        }
+        directRequestPermissions(requestCode, perms);
     }
 
     public boolean somePermissionPermanentlyDenied(@NonNull List<String> perms) {
